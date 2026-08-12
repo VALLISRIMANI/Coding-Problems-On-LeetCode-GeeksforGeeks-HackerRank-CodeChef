@@ -73,7 +73,7 @@ It can be verified that using fewer than two operations is not enough to make $N
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T16:26:58.816Z  
+**Submitted:** 2026-08-12T16:27:43.537Z  
 
 ```java
 import java.util.*;
@@ -93,13 +93,13 @@ class Codechef
 
             if (N % 3 == 0) {
                 System.out.println(0);
-            } else if (N % 5 == 0) {
-                System.out.println(2);
+            } else if (N % 3 == 2) {
+                System.out.println(1);
             } else {
-                if (N % 3 == 2) {
+                if (N % 5 == 0) {
                     System.out.println(1);
                 } else {
-                    System.out.println(1);
+                    System.out.println(2);
                 }
             }
         }
