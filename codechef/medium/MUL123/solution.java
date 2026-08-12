@@ -15,13 +15,13 @@ class Codechef
 
             if (N % 3 == 0) {
                 System.out.println(0);
-            } else if (N % 5 == 0) {
-                System.out.println(2);
+            } else if (N % 3 == 2) {
+                System.out.println(1);
             } else {
-                if (N % 3 == 2) {
+                if (N % 5 == 0) {
                     System.out.println(1);
                 } else {
-                    System.out.println(1);
+                    System.out.println(2);
                 }
             }
         }
