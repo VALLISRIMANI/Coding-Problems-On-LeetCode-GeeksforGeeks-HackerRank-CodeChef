@@ -73,7 +73,7 @@ It can be verified that using fewer than two operations is not enough to make $N
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T16:25:24.818Z  
+**Submitted:** 2026-08-12T16:25:55.535Z  
 
 ```java
 import java.util.*;
@@ -85,7 +85,26 @@ class Codechef
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
 
+        while (T-- > 0) {
+            int N = sc.nextInt();
+
+            if (N % 3 == 0) {
+                System.out.println(0);
+            } else if (N % 5 == 0) {
+                System.out.println(2);
+            } else {
+                if (N % 3 == 2) {
+                    System.out.println(1);
+                } else {
+                    System.out.println(1);
+                }
+            }
+        }
+
+        sc.close();
 	}
 }
 
