@@ -74,7 +74,7 @@ It's optimal to enter from the back, and walk through rows $6, 5, 4$ to reach it
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T16:23:24.825Z  
+**Submitted:** 2026-08-12T16:24:02.451Z  
 
 ```java
 import java.util.*;
@@ -86,7 +86,24 @@ class Codechef
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
+        Scanner sc = new Scanner(System.in);
 
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int M = sc.nextInt();
+            int X = sc.nextInt();
+
+            int row = (X - 1) / M + 1;
+
+            int fromFront = row;
+            int fromBack = N - row + 1;
+
+            System.out.println(Math.min(fromFront, fromBack));
+        }
+
+        sc.close();
 	}
 }
 
