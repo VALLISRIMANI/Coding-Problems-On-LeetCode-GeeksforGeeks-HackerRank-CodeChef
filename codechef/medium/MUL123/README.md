@@ -73,7 +73,7 @@ It can be verified that using fewer than two operations is not enough to make $N
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T16:25:55.535Z  
+**Submitted:** 2026-08-12T16:26:58.816Z  
 
 ```java
 import java.util.*;
