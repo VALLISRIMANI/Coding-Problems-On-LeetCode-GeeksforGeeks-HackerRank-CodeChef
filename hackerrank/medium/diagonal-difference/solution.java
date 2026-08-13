@@ -10,24 +10,27 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
+
 class Result {
 
     /*
-     * Complete the 'aVeryBigSum' function below.
+     * Complete the 'diagonalDifference' function below.
      *
-     * The function is expected to return a LONG_INTEGER.
-     * The function accepts LONG_INTEGER_ARRAY ar as parameter.
+     * The function is expected to return an INTEGER.
+     * The function accepts 2D_INTEGER_ARRAY arr as parameter.
      */
 
-    public static long aVeryBigSum(List<Long> ar) {
+    public static int diagonalDifference(List<List<Integer>> arr) {
     // Write your code here
-        long sum = 0;
+        int leftToRight = 0, rightToLeft = 0;
+        int n = arr.size();
         
-        for (long num : ar) {
-            sum += num;
+        for(int i = 0; i < n; i++) {
+            leftToRight += arr.get(i).get(i);
+            rightToLeft += arr.get(i).get(n - 1 - i);
         }
         
-        return sum;
+        return Math.abs(leftToRight - rightToLeft);
     }
 
 }
@@ -37,13 +40,23 @@ public class Solution {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int arCount = Integer.parseInt(bufferedReader.readLine().trim());
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-        List<Long> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Long::parseLong)
-            .collect(toList());
+        List<List<Integer>> arr = new ArrayList<>();
 
-        long result = Result.aVeryBigSum(ar);
+        IntStream.range(0, n).forEach(i -> {
+            try {
+                arr.add(
+                    Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                        .map(Integer::parseInt)
+                        .collect(toList())
+                );
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        int result = Result.diagonalDifference(arr);
 
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
