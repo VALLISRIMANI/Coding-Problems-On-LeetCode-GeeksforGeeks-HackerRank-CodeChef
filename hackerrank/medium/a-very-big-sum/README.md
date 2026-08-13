@@ -1,4 +1,4 @@
-# Compare the Triplets
+# A Very Big Sum
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -63,7 +63,7 @@ When we add several integer values, the resulting sum might exceed the above ran
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-13T14:05:04.143Z  
+**Submitted:** 2026-08-13T14:05:47.466Z  
 
 ```java
 import java.io.*;
@@ -81,28 +81,21 @@ import static java.util.stream.Collectors.toList;
 class Result {
 
     /*
-     * Complete the 'compareTriplets' function below.
+     * Complete the 'aVeryBigSum' function below.
      *
-     * The function is expected to return an INTEGER_ARRAY.
-     * The function accepts following parameters:
-     *  1. INTEGER_ARRAY a
-     *  2. INTEGER_ARRAY b
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts LONG_INTEGER_ARRAY ar as parameter.
      */
 
-    public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-        int alice = 0, bob = 0;
+    public static long aVeryBigSum(List<Long> ar) {
+    // Write your code here
+        long sum = 0;
         
-        int i = 0;
-        while (i < 3) {
-            if (a.get(i) > b.get(i)) {
-                alice++;
-            } else if (a.get(i) < b.get(i)) {
-                bob++;
-            }
-            i++;
-        } 
+        for (long num : ar) {
+            sum += num;
+        }
         
-        return Arrays.asList(alice, bob);
+        return sum;
     }
 
 }
@@ -112,22 +105,16 @@ public class Solution {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
+        int arCount = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Long> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Long::parseLong)
             .collect(toList());
 
-        List<Integer> b = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+        long result = Result.aVeryBigSum(ar);
 
-        List<Integer> result = Result.compareTriplets(a, b);
-
-        bufferedWriter.write(
-            result.stream()
-                .map(Object::toString)
-                .collect(joining(" "))
-            + "\n"
-        );
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
 
         bufferedReader.close();
         bufferedWriter.close();
