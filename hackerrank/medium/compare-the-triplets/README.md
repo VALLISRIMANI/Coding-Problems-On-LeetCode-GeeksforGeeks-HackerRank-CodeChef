@@ -1,4 +1,4 @@
-# Simple Array Sum
+# Compare the Triplets
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -63,7 +63,7 @@ The second line contains <em>3</em> space-separated integers, <em>b[0]</em>, <em
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-13T13:58:44.577Z  
+**Submitted:** 2026-08-13T14:04:57.633Z  
 
 ```java
 import java.io.*;
@@ -81,21 +81,28 @@ import static java.util.stream.Collectors.toList;
 class Result {
 
     /*
-     * Complete the 'simpleArraySum' function below.
+     * Complete the 'compareTriplets' function below.
      *
-     * The function is expected to return an INTEGER.
-     * The function accepts INTEGER_ARRAY ar as parameter.
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY a
+     *  2. INTEGER_ARRAY b
      */
 
-    public static int simpleArraySum(List<Integer> ar) {
-    // Write your code here
-        int sum = 0;
+    public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+        int alice = 0, bob = 0;
         
-        for (int num : ar) {
-            sum += num;
-        }
+        int i = 0;
+        while (i < 3) {
+            if (a.get(i) > b.get(i)) {
+                alice++;
+            } else if (a.get(i) < b.get(i)) {
+                bob++;
+            }
+            i++;
+        } 
         
-        return sum;
+        return Arrays.asList(alice, bob);
     }
 
 }
@@ -105,16 +112,22 @@ public class Solution {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int arCount = Integer.parseInt(bufferedReader.readLine().trim());
-
-        List<Integer> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+        List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Integer::parseInt)
             .collect(toList());
 
-        int result = Result.simpleArraySum(ar);
+        List<Integer> b = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+            .map(Integer::parseInt)
+            .collect(toList());
 
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
+        List<Integer> result = Result.compareTriplets(a, b);
+
+        bufferedWriter.write(
+            result.stream()
+                .map(Object::toString)
+                .collect(joining(" "))
+            + "\n"
+        );
 
         bufferedReader.close();
         bufferedWriter.close();
