@@ -1,4 +1,4 @@
-# Solve Me First
+# Staircase
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -43,33 +43,56 @@ $0 \lt n \le 100$ .
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-13T14:21:58.600Z  
+**Submitted:** 2026-08-14T15:21:29.132Z  
 
 ```java
 import java.io.*;
-import java.util.*;
-import java.text.*;
 import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
 import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Result {
+
+    /*
+     * Complete the 'staircase' function below.
+     *
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static void staircase(int n) {
+    // Write your code here
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+            
+            for (int k = 1; k <= i; k++) {
+                System.out.print("#");
+            }
+            
+            System.out.println();
+        }
+    }
+
+}
 
 public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-    static int solveMeFirst(int a, int b) {
-      	// Hint: Type return a+b; below 
-        return a + b;
-   }
+        Result.staircase(n);
 
- public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int a;
-        a = in.nextInt();
-        int b;
-        b = in.nextInt();
-        int sum;
-        sum = solveMeFirst(a, b);
-        System.out.println(sum);
-   }
+        bufferedReader.close();
+    }
 }
 
 ```
