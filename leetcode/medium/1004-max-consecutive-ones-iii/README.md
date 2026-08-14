@@ -1,0 +1,76 @@
+# Max Consecutive Ones III
+
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
+
+## Problem
+
+Given a binary array `nums` and an integer `k`, return  *the maximum number of consecutive* `1` *'s in the array if you can flip at most*  `k` `0`'s.
+
+ 
+
+ **Example 1:** 
+
+```
+Input: nums = [1,1,1,0,0,0,1,1,1,1,0], k = 2
+Output: 6
+Explanation: [1,1,1,0,0,1,1,1,1,1,1]
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+```
+
+ **Example 2:** 
+
+```
+Input: nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1], k = 3
+Output: 10
+Explanation: [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1]
+Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
+
+```
+
+ 
+
+ **Constraints:** 
+
+- 1 <= nums.length <= 105
+- nums[i] is either 0 or 1.
+- 0 <= k <= nums.length
+
+## Solution
+
+**Language:** Java  
+**Runtime:** 3 ms (beats 95.78%)  
+**Memory:** 52.2 MB (beats 36.40%)  
+**Submitted:** 2026-08-14T14:45:00.041Z  
+
+```java
+class Solution {
+    public int longestOnes(int[] nums, int k) {
+        int left = 0, right = 0;
+        int zeroes = 0;
+        int n = nums.length;
+        int max = 0;
+
+        while (right < n) {
+            if (nums[right] == 0) {
+                zeroes++;
+            }
+
+            while (zeroes > k) {
+                if (nums[left] == 0) {
+                    zeroes--;
+                }
+                left++;
+            }
+
+            max = Math.max(max, right - left + 1);
+            right++;
+        }
+
+        return max;
+    }
+}
+```
+
+---
+
+[View on LeetCode](https://leetcode.com/problems/max-consecutive-ones-iii/)
