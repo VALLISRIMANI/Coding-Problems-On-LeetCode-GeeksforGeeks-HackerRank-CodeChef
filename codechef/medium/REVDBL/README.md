@@ -4,130 +4,110 @@
 
 ## Problem
 
-### Detect Start of Cycle in Linked List
+### Reverse a Doubly Linked List
 
-You are given a singly linked list with $N$ nodes. Each node contains an integer value.
-Your task is to find the  **index of the node where a cycle begins**, if a cycle exists. If the linked list has no cycle, print $-1$.
+You are given a  **doubly linked list**  of integers. Your task is to  **reverse the list in-place**  and print the elements of the reversed list.
 
-A cycle occurs when a node's next pointer points to a  **previous node**  or  **itself**  in the list. The $pos$ is the 0-based index of the node that the last node points to.
+Here is the  **same style of function-declaration explanation**, rewritten for your  **reverse doubly linked list**  problem:
 
 ## Function Declaration
 ### Function Name
 
-$detectCycle$ — This function determines whether a cycle exists in a singly linked list and returns the index of the node where the cycle begins.
+$reverseDLL$ — This function reverses the given doubly linked list by swapping the `next` and `prev` pointers of each node.
 
 ### Parameters
 
-$head$: A pointer to the  **first node**  of the singly linked list.
+$head$: A pointer to the  **first node**  of the original doubly linked list.
 
-- May be $NULL$ if the list is empty.
-- Each node contains an integer value and a pointer to the next node.
+- If head is NULL, the list is empty.
 ### Return Value
 
-Returns an integer representing the  **0-based index of the node**  where the cycle starts.
+Returns a pointer to the  **new head**  of the doubly linked list after reversal.
 
-- If no cycle is present in the linked list, returns $-1$.
+- If the list is empty, returns NULL.
 
 `The input and output formats provided below are only for testing with custom inputs.`
 
 ## Constraints:
-- $0 \le N \le 10^{4}$
-- $-10^{5} \le \text{Node.val} \le 10^{5}$
-- $-1 \le \text{pos} < N$
+- $1 \le T \le 100$
+- $1 \le N \le 10^{6}$
+- $0 \le \text{node.val} \le 10^{4}$
+- $\textbf{Note: } \text{The sum of } N \text{ over all test cases will not exceed } 10^{6}.$
 ### Input Format
-- The first line contains an integer $N$ — the number of nodes in the linked list.
-- The second line contains $N$ space-separated integers — the values of the nodes.
-- The third line contains an integer $pos$ — the index that the last node connects to ($-1$ if no cycle).
+
+The first line contains an integer  **T**, the number of test cases.
+
+For each test case:
+
+- The first line contains an integer N, the number of nodes in the list.
+- The second line contains N space-separated integers representing the values of the nodes from head to tail.
 ### Output Format
-- Print a single integer — the 0-based index of the node where the cycle begins.
-- If there is no cycle, print $-1$.
+
+For each test case, print a single line containing  **N**  space-separated integers representing the reversed list.
+
 ### Sample 1:
 Input
 Output
 
 ```
-7
-11 22 33 44 55 66 77
+3
 4
+5 15 25 35
+2
+100 200
+1
+42
 
 ```
 
 ```
-4
+35 25 15 5
+200 100
+42
 
 ```
 
 ### Explanation:
 
-Linked list: `11 -> 22 -> 33 -> 44 -> 55 -> 66 -> 77`
-The last node `77` points back to node at index `4` (`55`). Cycle starts at `55`.
-
-### Sample 2:
-Input
-Output
-
-```
-5
-3 6 9 12 15
-1
-
-```
-
-```
-1
-
-```
-
-### Explanation:
-
-Linked list: `3 -> 6 -> 9 -> 12 -> 15` The last node `15` points to index `1` (`6`). Cycle starts at `6`.
+The input contains T = 3 test cases. For each test case, a doubly linked list is given and needs to be reversed. The list 5 15 25 35 becomes 35 25 15 5 after reversal. The list 100 200 becomes 200 100. The list 42 remains unchanged as it contains only one node. Thus, the reversed lists are printed for each test case.
 
 ## Solution
 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-14T10:40:21.046Z  
+**Submitted:** 2026-08-14T10:51:59.527Z  
 
 ```java
-// class Node {
-//     int val;
-//     Node next;
-//     Node(int val) {
-//         this.val = val;
-//         this.next = null;
-//     }
-// }
+//class Main {
+
+//    static class Node {
+//        int data;
+//      Node prev, next;
+//        Node(int d) { data = d; }
+//    }
 
 
-
-public static int detectCycle(Node head) {
-    //write your code here...
-    Node slow = head;
-    Node fast = head;
+static Node reverseDLL(Node head) {
+    //write code here...
+    if (head == null) return null;
     
-    while (fast != null && fast.next != null) {
-        slow = slow.next;
-        fast = fast.next.next;
-        
-        if (slow == fast) {
-            break;
-        }
+    Node curr = head;
+    Node prevNode = null;
+    
+    while (curr != null) {
+        prevNode = curr.prev;
+        curr.prev = curr.next;
+        curr.next = prevNode;
+        curr = curr.prev;
     }
     
-    if (fast == null || fast.next == null) return -1;
-    
-    slow = head;
-    int index = 0;  
-    while (slow != fast) {
-        slow = slow.next;
-        fast = fast.next;
-        index++;
+    if (prevNode != null) {
+        head = prevNode.prev;
     }
     
-    return index;
+    return head;
 }
-
 ```
 
 ---
