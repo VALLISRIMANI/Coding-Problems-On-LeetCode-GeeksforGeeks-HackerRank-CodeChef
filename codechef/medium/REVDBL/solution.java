@@ -1,37 +1,29 @@
-// class Node {
-//     int val;
-//     Node next;
-//     Node(int val) {
-//         this.val = val;
-//         this.next = null;
-//     }
-// }
+//class Main {
+
+//    static class Node {
+//        int data;
+//      Node prev, next;
+//        Node(int d) { data = d; }
+//    }
 
 
-
-public static int detectCycle(Node head) {
-    //write your code here...
-    Node slow = head;
-    Node fast = head;
+static Node reverseDLL(Node head) {
+    //write code here...
+    if (head == null) return null;
     
-    while (fast != null && fast.next != null) {
-        slow = slow.next;
-        fast = fast.next.next;
-        
-        if (slow == fast) {
-            break;
-        }
+    Node curr = head;
+    Node prevNode = null;
+    
+    while (curr != null) {
+        prevNode = curr.prev;
+        curr.prev = curr.next;
+        curr.next = prevNode;
+        curr = curr.prev;
     }
     
-    if (fast == null || fast.next == null) return -1;
-    
-    slow = head;
-    int index = 0;  
-    while (slow != fast) {
-        slow = slow.next;
-        fast = fast.next;
-        index++;
+    if (prevNode != null) {
+        head = prevNode.prev;
     }
     
-    return index;
+    return head;
 }
