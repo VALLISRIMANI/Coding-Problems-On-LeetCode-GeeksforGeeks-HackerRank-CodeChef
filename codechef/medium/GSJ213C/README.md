@@ -46,7 +46,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-15T16:38:50.921Z  
+**Submitted:** 2026-08-15T16:38:55.314Z  
 
 ```java
 // Change the 'custom inputs' below and click 'run'
