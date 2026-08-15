@@ -1,4 +1,4 @@
-// Debug the following code to solve the problem
+// Debug the code below to solve the problem
 import java.util.Scanner;
 
 class Codechef
