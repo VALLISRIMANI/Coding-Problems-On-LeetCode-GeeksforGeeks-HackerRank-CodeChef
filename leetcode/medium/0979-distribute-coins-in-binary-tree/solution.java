@@ -28,6 +28,6 @@ class Solution {
         
         moves += Math.abs(left) + Math.abs(right);
         
-        return root.val + left + right -1;
+        return root.val + left + right - 1;
     }
 }
