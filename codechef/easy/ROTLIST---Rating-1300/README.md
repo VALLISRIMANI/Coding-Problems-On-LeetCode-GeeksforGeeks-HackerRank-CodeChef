@@ -89,7 +89,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-17T10:22:04.291Z  
+**Submitted:** 2026-08-17T10:23:11.073Z  
 
 ```java
 /*class Node{
