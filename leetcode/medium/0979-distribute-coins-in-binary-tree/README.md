@@ -42,9 +42,9 @@ Explanation: From the left child of the root, we move two coins to the root [tak
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 43.9 MB (beats 50.60%)  
-**Submitted:** 2026-08-17T15:43:43.367Z  
+**Runtime:** 0 ms  
+**Memory:** 42.5 MB  
+**Submitted:** 2026-08-17T15:44:10.403Z  
 
 ```java
 /**
@@ -77,7 +77,7 @@ class Solution {
         
         moves += Math.abs(left) + Math.abs(right);
         
-        return root.val + left + right -1;
+        return root.val + left + right - 1;
     }
 }
 ```
