@@ -4,17 +4,51 @@
 
 ## Problem
 
-_Description not available._
+### Practice problem - Modulo function
+
+Chef has recently started playing chess.
+He completes a game of chess in 30 minutes.
+Chef has a total of $N$ minutes of available time
+
+- He will utilise the maximum possible time to play
+- He will not plan incomplete games - if there is insufficient time remaining to play a game, he will not play the game
+
+How many complete games with Chef be able to play and how much spare time will remain?
+Go ahead and code out the solution in the IDE.
+
+### Input Format
+- The first line of input will contain a single integer $T$, denoting the number of test cases.
+- Each test case consists of the integer $N$
+### Output Format
+
+For each test case, output on a new line $2$ space separated integers
+
+- Total games played by Chef
+- Total spare time in minutes
+### Sample 1:
+Input
+Output
+
+```
+2
+100
+90
+```
+
+```
+3 10
+3 0
+```
 
 ## Solution
 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-17T10:41:44.041Z  
+**Submitted:** 2026-08-17T10:42:41.829Z  
 
 ```java
-// Update the blanks in the code below to solve the problem
+// Update the code below to solve the problem
 import java.util.Scanner;
 
 class Codechef
@@ -24,18 +58,19 @@ class Codechef
 		Scanner read = new Scanner(System.in);
 		
 		int t = read.nextInt();
-		// loop through each test case for its inputs
 		for(int i=0; i<t; i++)
 		{
-		    // Accept 2 integers inputs.
-    		int a = read.nextInt();
-    		int b = read.nextInt();
+    		int n = read.nextInt();
+    		
+    		int total_games = n / 30;
+            int remaining_time = n % 30;
 
-    		System.out.print(a / b + " ");
-            System.out.println(a % b);
+    		System.out.print(total_games + " ");
+            System.out.println(remaining_time);
 		}
 	}
 }
+
 ```
 
 ---
