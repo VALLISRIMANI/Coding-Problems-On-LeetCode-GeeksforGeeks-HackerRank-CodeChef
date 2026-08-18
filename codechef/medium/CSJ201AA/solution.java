@@ -1,5 +1,4 @@
-// Update the '_' below to solve the problem
-
+// Update the blanks in the code below
 import java.util.Scanner;
 
 class Codechef
@@ -11,24 +10,23 @@ class Codechef
 		int t = read.nextInt();
 		for(int i=0; i<t; i++)
 		{
+            // Accept one integer as input
     		int n = read.nextInt();
     		
-    		// Condition 1
-            if(n%3 == 0){
-                System.out.println("Divisible by 3");
-            }
-            else{
-                System.out.println("Not divisible by 3");
-            }
-            
-            // Condition 2
-            if(n%2 != 0){
-                System.out.println("Odd");
-            }
-            else{
-                System.out.println("Even");
-            }
+    		// 1st condition in the problem
+    		if(n <= 100){
+    		    System.out.println("Good");
+    		}
     		
+    		// 2nd condition in the problem
+    		else if(n > 100 && n <= 200){
+    		    System.out.println("Better");
+    		}
+    		
+    		// 3rd condition in the problem
+    		else{
+    		    System.out.println("Best");
+    		}
 		}
 	}
 }
