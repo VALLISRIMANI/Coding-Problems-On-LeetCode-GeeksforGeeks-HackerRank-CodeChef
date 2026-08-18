@@ -1,0 +1,79 @@
+# CSJ201A
+
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
+
+## Problem
+
+### Review syntax usage
+
+Let us cover the 'conditional statements' syntax required for solving beginner's programming problems.
+
+### Task
+
+Write a program which does the following
+
+- Accepts the count of test cases - $t$ Each test case has one integer $N$
+- Output the following for each test case If input is less than or equal to $100$, output 'Good' If input is greater than 100 but less than or equal to $200$, output 'Better' If the input is greater than 200, output 'Best'
+### Sample 1:
+Input
+Output
+
+```
+3
+100
+200
+201
+```
+
+```
+Good
+Better
+Best
+```
+
+## Solution
+
+**Language:** Java  
+**Runtime:** N/A  
+**Memory:** N/A  
+**Submitted:** 2026-08-18T09:30:35.365Z  
+
+```java
+// Update the blanks in the code below
+import java.util.Scanner;
+
+class Codechef
+{
+	public static void main (String[] args)
+	{
+		Scanner read = new Scanner(System.in);
+		
+		int t = read.nextInt();
+		for(int i=0; i<t; i++)
+		{
+            // Accept one integer as input
+    		int n = read.nextInt();
+    		
+    		// 1st condition in the problem
+    		if(n <= 100){
+    		    System.out.println("Good");
+    		}
+    		
+    		// 2nd condition in the problem
+    		else if(n > 100 && n <= 200){
+    		    System.out.println("Better");
+    		}
+    		
+    		// 3rd condition in the problem
+    		else{
+    		    System.out.println("Best");
+    		}
+		}
+	}
+}
+
+```
+
+---
+
+[View on CodeChef](https://www.codechef.com/problems/CSJ201A)
