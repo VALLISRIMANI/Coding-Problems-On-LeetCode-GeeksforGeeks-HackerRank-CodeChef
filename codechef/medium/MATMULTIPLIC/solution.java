@@ -1,43 +1,26 @@
-import java.util.Scanner;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
-public class Main {
-    public static void main(String[] args) {
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
         Scanner scanner = new Scanner(System.in);
-
-        int m = scanner.nextInt();
         int n = scanner.nextInt();
+        int m = scanner.nextInt();
 
-        int[][] a = new int[m][n];
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
-                a[i][j] = scanner.nextInt();
+        int[][] mat = new int[n][m];
+        int count = 0;
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                mat[i][j] = scanner.nextInt();
+                if (mat[i][j] < 0) count++;
             }
         }
 
-        int _n = n;
-
-        n = scanner.nextInt();
-        int p = scanner.nextInt();
-
-        assert (_n == n);
-
-        int[][] b = new int[n][p];
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < p; j++){
-                b[i][j] = scanner.nextInt();
-            }
-        }
-
-        int[][] mul = new int[m][p];
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < p; j++){
-                mul[i][j] = 0;
-                for (int k = 0; k < n; k++) {
-                    mul[i][j] += a[i][k] * b[k][j];
-                }
-                System.out.print(mul[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+        System.out.println(count);
+	}
 }
