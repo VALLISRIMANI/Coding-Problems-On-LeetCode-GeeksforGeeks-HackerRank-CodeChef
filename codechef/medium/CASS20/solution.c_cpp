@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    float fahrenheit = 98.3;
+    float height = 1.82;
+    float weight = 72;
     // Complete the code
-    float celsius = (fahrenheit - 32) * 5 / 9;
-    printf("%f", celsius);
+    float bmi = weight / (height * height);
+    printf("%f", bmi);
     return 0;
 }
