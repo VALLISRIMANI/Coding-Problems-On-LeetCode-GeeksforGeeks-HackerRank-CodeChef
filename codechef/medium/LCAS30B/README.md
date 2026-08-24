@@ -4,26 +4,48 @@
 
 ## Problem
 
-_Description not available._
+### Temperature Converter - II
+
+Now do the reverse, write a C program that converts a temperature in Fahrenheit to Celsius. The Fahrenheit temperature should be stored in a float variable fahrenheit, and the Celsius equivalent should be printed using a single printf statement.
+
+We can use the same relation between the two scales:
+
+```
+fahrenheit = (celsius * 9/5) + 32;
+
+```
+
+Take the Fahrenheit temperature to be 98.3.
+
+### Sample 1:
+Input
+Output
+
+```
+ 
+```
+
+```
+36.83333
+```
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-24T14:47:06.048Z  
+**Submitted:** 2026-08-24T14:49:20.826Z  
 
 ```c_cpp
 #include <stdio.h>
 
 int main() {
-    float celsius = 20.5;
-	// your code goes here
-    float fahrenheit = (celsius * 9.0 / 5) + 32;
-    printf("%f", fahrenheit);
+    float fahrenheit = 98.3;
+    // Complete the code
+    float celsius = (fahrenheit - 32) * 5 / 9;
+    printf("%f", celsius);
     return 0;
 }
-
 
 ```
 
