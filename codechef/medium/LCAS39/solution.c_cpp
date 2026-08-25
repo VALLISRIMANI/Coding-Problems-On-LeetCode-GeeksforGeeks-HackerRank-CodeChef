@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+	// your code goes here
+    char string[] = "CIVVIx";
+    string[5] = 'C';
+    printf("%s", string);
+}
+
