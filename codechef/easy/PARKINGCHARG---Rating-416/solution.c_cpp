@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+	// your code goes here
+    int X, Y, H, result;
+    scanf("%d %d %d", &X, &Y, &H);
+    result = X + Y * (H - 1);
+    printf("%d", result);
+}
