@@ -4,37 +4,66 @@
 
 ## Problem
 
-_Description not available._
+Complete the given function which reverses the original array using pointers.
+
+### Input Format
+- The first line of input contain a single integer $N$ - the size of the input array.
+- Next line contains $N$ space separated integers - the elements of the array.
+### Output Format
+- Output $N$ space separated integers - the reversed array.
+### Sample 1:
+Input
+Output
+
+```
+5
+1 2 3 4 5
+```
+
+```
+5 4 3 2 1
+```
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-26T13:36:11.387Z  
+**Submitted:** 2026-08-26T13:42:57.977Z  
 
 ```c_cpp
 #include <stdio.h>
 
-void calculateFactorial(int *numPtr) {
-   // Complete the function
-   int n = *numPtr;
-   int fact = 1;
-   
-   for (int i = 1; i <= n; i++) {
-       fact *= i;
-   }
-   
-   *numPtr = fact;
+// Function to reverse the elements of an array using pointers
+void reverseArray(int* arr, int size) {
+    // Complete this function 
+    int *start = arr;
+    int *end = arr + size - 1;
+    
+    while (start < end) {
+        int temp = *start;
+        *start = *end;
+        *end = temp;
+        
+        start++;
+        end--;
+    }
 }
 
 int main() {
-    int number;
-    scanf("%d", &number);
+    int n;
+    scanf("%d",&n);
+    int arr[n];
+    for(int i = 0; i < n; i++){
+        scanf("%d",&arr[i]);
+    }
+   
+    // Call the function to reverse the array
+    reverseArray(&arr, n);
 
-    calculateFactorial(&number); // Pass the address of 'number' to the function
-
-    printf("%d\n", number); // number should store factorial of number after function call
+    for (int i = 0; i < n; i++) {
+        printf("%d ",arr[i]);
+    }
 
     return 0;
 }
