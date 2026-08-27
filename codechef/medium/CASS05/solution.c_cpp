@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 int main() {
-    int a, b, c; // side lengths of triangle
-    scanf("%d %d %d", &a, &b, &c);
-    // Complete the code
+    // write your code here
+    int num;
+    scanf("%d", &num);
     
-    if ((a + b > c) && (a + c > b) && (b + c > a)) {
+    if (num % 400 == 0 || num % 4 == 0 && num % 100 != 0) {
         printf("YES");
     } else {
         printf("NO");
