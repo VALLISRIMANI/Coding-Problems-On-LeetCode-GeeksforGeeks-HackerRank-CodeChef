@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+	// your code goes here
+    int num;
+    scanf("%d", &num);
+    
+    if (num % 2 == 0 && num % 5 == 0) {
+        printf("Even and Divisible by 5");
+    } else {
+        printf("Not Even or Not Divisible by 5");
+    }
+}
+
