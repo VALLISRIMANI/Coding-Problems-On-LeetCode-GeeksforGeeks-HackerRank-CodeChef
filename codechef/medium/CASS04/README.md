@@ -31,7 +31,7 @@ YES
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-27T03:41:42.547Z  
+**Submitted:** 2026-08-27T03:42:26.712Z  
 
 ```c_cpp
 #include <stdio.h>
@@ -41,7 +41,7 @@ int main() {
     scanf("%d %d %d", &a, &b, &c);
     // Complete the code
     
-    if ( a + b > c || a + c > b || b + c > a) {
+    if ((a + b > c) && (a + c > b) && (b + c > a)) {
         printf("YES");
     } else {
         printf("NO");
