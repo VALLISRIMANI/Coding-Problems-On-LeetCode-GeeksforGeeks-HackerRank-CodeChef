@@ -4,46 +4,64 @@
 
 ## Problem
 
-### Largest of Three
+### Even Sum
 
-Write a C program that takes three integers as input and determines the largest among them. Print the largest number.
+Given two space separated integers as user inputs, print `YES` if their sum is even else `NO`.
 
 ### Sample 1:
 Input
 Output
 
 ```
-1 2 3
+2 3
 ```
 
 ```
-Largest: 3
+NO
 ```
+
+### Explanation:
+
+2 + 3 = 5 (Odd)
+
+### Sample 2:
+Input
+Output
+
+```
+3 5
+```
+
+```
+YES
+```
+
+### Explanation:
+
+3 + 5 = 8 (Even)
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-27T03:31:46.643Z  
+**Submitted:** 2026-08-27T03:33:08.102Z  
 
 ```c_cpp
 #include <stdio.h>
 
 int main() {
-	// your code goes here
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
+    int a, b;
+    // Take inputs and complete the code
+    scanf("%d %d", &a, &b);
     
-    if (a >= b && a >= c) {
-        printf("Largest: %d", a);
-    } else if (b >= a && b >= c) {
-        printf("Largest: %d", b);
+    if ((a + b) % 2 == 0) {
+        printf("YES");
     } else {
-        printf("Largest: %d", c);
+        printf("NO");
     }
+    return 0;
 }
-
 
 ```
 
