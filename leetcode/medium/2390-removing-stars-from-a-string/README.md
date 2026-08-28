@@ -52,14 +52,14 @@ Explanation: The entire string is removed, so we return an empty string.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 470 ms (beats 12.09%)  
-**Memory:** 49 MB (beats 21.03%)  
-**Submitted:** 2026-08-28T10:46:17.600Z  
+**Runtime:** 31 ms (beats 77.42%)  
+**Memory:** 48.2 MB (beats 46.58%)  
+**Submitted:** 2026-08-28T10:47:38.613Z  
 
 ```java
 class Solution {
     public String removeStars(String s) {
-        Stack<Character> st = new Stack<>();
+        /*Stack<Character> st = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -74,6 +74,21 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         while (!st.isEmpty()) {
             sb.insert(0, st.pop());
+        }
+
+        return sb.toString();*/
+
+        
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (ch == '*') {
+                sb.deleteCharAt(sb.length() - 1);
+            } else {
+                sb.append(ch);
+            }
         }
 
         return sb.toString();
