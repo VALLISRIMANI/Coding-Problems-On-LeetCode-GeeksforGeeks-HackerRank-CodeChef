@@ -4,39 +4,68 @@
 
 ## Problem
 
-_Description not available._
+### Simple Calculator
+
+Write a C program that takes two numbers and an operator (+, -, *, /) as input and performs the corresponding operation using a switch statement. Print the result upto 2 decimal places.
+
+### Sample 1:
+Input
+Output
+
+```
+1 2
++
+```
+
+```
+3.00
+```
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-28T08:47:26.710Z  
+**Submitted:** 2026-08-28T08:51:57.728Z  
 
 ```c_cpp
-// Updae your code below this line
 #include <stdio.h>
 
 int main() {
-    int temperature;
-    scanf("%d", &temperature);
+    float num1, num2, result;
+    char operator;
+    scanf("%f %f", &num1, &num2);
+    scanf(" %c", &operator);
 
-    // Expression (temperature > 90) will return either 0 or 1 
-    switch(temperature > 90) {   
-        case 0:
-            printf("COLD");
+    // Perform the operation using a switch statement
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            printf("%.2f\n", result);
             break;
-        case 1:
-            printf("HOT");
+        case '-':
+            result = num1 - num2;
+            printf("%.2f\n", result);
             break;
-
-
-
-
+        case '*':
+            result = num1 * num2;
+            printf("%.2f\n", result);
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+                printf("%.2f\n", result);
+            } else {
+                printf("Error: Division by zero\n");
+            }
+            break;
+        default:
+            printf("Invalid operator\n");
     }
 
     return 0;
 }
+
 ```
 
 ---
