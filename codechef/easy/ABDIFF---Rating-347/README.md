@@ -66,19 +66,24 @@ The difference between these values is $1$.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-30T04:39:09.194Z  
+**Submitted:** 2026-08-30T04:39:42.519Z  
 
 ```c_cpp
 #include <stdio.h>
+#include <stdlib.h> // Required for the abs() function
 
 int main() {
     int a, b;
     scanf("%d %d", &a, &b);
 
-    // Your code goes here 
+    int sum = a + b;
+    int product = a * b;
+    
+    // Print the absolute difference between sum and product
+    printf("%d\n", abs(sum - product));
 
+    return 0;
 }
-
 ```
 
 ---
