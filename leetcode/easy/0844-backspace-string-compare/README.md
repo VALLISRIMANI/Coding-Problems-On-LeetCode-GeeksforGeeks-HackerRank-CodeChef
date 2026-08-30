@@ -51,17 +51,17 @@ Explanation: s becomes "c" while t becomes "b".
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.7 MB  
-**Submitted:** 2026-08-30T05:25:29.315Z  
+**Runtime:** 2 ms (beats 61.19%)  
+**Memory:** 43.3 MB (beats 20.23%)  
+**Submitted:** 2026-08-30T05:32:08.892Z  
 
 ```java
 class Solution {
     public boolean backspaceCompare(String s, String t) {
         Stack<Character> st1 = new Stack<>();
         for (char ch : s.toCharArray()) {
-            if (!st1.isEmpty() && ch == '#') {
-                st1.pop();
+            if (ch == '#') {
+                if (!st1.isEmpty())  st1.pop();
             } else {
                 st1.push(ch);
             }
@@ -69,8 +69,8 @@ class Solution {
 
         Stack<Character> st2 = new Stack<>();
         for (char ch : t.toCharArray()) {
-            if (!st2.isEmpty() && ch == '#') {
-                st2.pop();
+            if (ch == '#') { 
+                if (!st2.isEmpty()) st2.pop();
             } else {
                 st2.push(ch);
             }
@@ -82,7 +82,7 @@ class Solution {
             }
         }
 
-        return true;
+        return st1.isEmpty() && st2.isEmpty();
     }
 }
 ```
