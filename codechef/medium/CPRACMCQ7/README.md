@@ -59,7 +59,7 @@ else{
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-30T04:31:12.421Z  
+**Submitted:** 2026-08-30T04:31:16.247Z  
 
 ```cpp
 #include <stdio.h>
