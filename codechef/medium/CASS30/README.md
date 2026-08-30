@@ -4,36 +4,14 @@
 
 ## Problem
 
-### Whats Wrong
-
-Debug the code in the IDE.
-
-The code is supposed to do the following:
-
-- Input three space-separated integers on a single line.
-- If the middle integer is greater than the sum of the other two integers and is odd, print 1; otherwise, print 0.
-### Sample 1:
-Input
-Output
-
-```
-1 7 4
-```
-
-```
-1
-```
-
-### Explanation:
-
-7 is greater than sum of 1 and 4, and its an odd integer, hence the output is 1.
+_Description not available._
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-30T04:47:04.854Z  
+**Submitted:** 2026-08-30T04:45:09.794Z  
 
 ```c_cpp
 // Debug the code
@@ -41,13 +19,40 @@ Output
 
 
 int main() {
-    int a, b, c;
-    scanf("%d %d %d", & a, & b, & c);
-
-    printf("%d", (b > a + c) && (b % 2 == 1));
+    int day;
+    scanf("%d", &day);
+    
+    switch (day) {
+        case 1:
+            printf("Monday");
+            break;
+        case 2:
+            printf("Tuesday");
+            break;
+        case 3:
+            printf("Wednesday");
+            break;
+        case 4:
+            printf("Thursday");
+            break;
+        case 5:
+            printf("Friday");
+            break;
+        case 6:
+            printf("Saturday");
+            break;
+        case 7:
+            printf("Sunday");
+            break;
+        default:
+            printf("Invalid input");
+    }
 
     return 0;
 }
+
+
+
 ```
 
 ---
