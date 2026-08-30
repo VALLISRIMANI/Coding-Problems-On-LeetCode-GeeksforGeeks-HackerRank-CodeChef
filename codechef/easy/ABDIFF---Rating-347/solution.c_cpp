@@ -1,9 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h> // Required for the abs() function
 
 int main() {
     int a, b;
     scanf("%d %d", &a, &b);
 
-    // Your code goes here 
+    int sum = a + b;
+    int product = a * b;
+    
+    // Print the absolute difference between sum and product
+    printf("%d\n", abs(sum - product));
 
+    return 0;
 }
