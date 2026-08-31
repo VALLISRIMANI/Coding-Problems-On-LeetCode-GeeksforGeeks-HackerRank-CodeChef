@@ -42,14 +42,24 @@ Output: "lovely"
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 43 MB (beats 51.56%)  
-**Submitted:** 2026-08-31T17:39:34.584Z  
+**Runtime:** 0 ms  
+**Memory:** 42.6 MB  
+**Submitted:** 2026-08-31T17:40:00.283Z  
 
 ```java
 class Solution {
     public String toLowerCase(String s) {
-        return s.toLowerCase();
+        // return s.toLowerCase();
+        
+        StringBuilder sb = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (c >= 'A' && c <= 'Z') {
+                sb.append((char)(c + 32));
+            } else {
+                sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 }
 ```
