@@ -42,9 +42,9 @@ Output: "lovely"
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.6 MB  
-**Submitted:** 2026-08-31T17:40:00.283Z  
+**Runtime:** 1 ms (beats 25.26%)  
+**Memory:** 43.1 MB (beats 34.09%)  
+**Submitted:** 2026-08-31T17:40:09.900Z  
 
 ```java
 class Solution {
