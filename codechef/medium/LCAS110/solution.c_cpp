@@ -4,13 +4,14 @@ int main() {
 	// your code goes here
     int num;
     scanf("%d", &num);
-    int sum = 0;
     
-    while (num > 0) {
-        if (num % 2 == 0) sum += num;
-        num--;
+    int reverse = 0;
+    
+    while (num != 0) {
+        reverse = reverse * 10 + (num % 10);
+        num /= 10;
     }
     
-    printf("%d", sum);
+    printf("%d", reverse);
 }
 
