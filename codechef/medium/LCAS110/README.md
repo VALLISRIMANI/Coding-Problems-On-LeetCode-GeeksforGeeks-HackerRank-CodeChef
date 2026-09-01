@@ -4,14 +4,28 @@
 
 ## Problem
 
-_Description not available._
+### Reverse a Number
+
+Write a C program that takes an integer as input and prints its reverse. Use a while loop for the reversal process.
+
+### Sample 1:
+Input
+Output
+
+```
+12345
+```
+
+```
+54321
+```
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-01T09:31:57.432Z  
+**Submitted:** 2026-09-01T09:34:10.478Z  
 
 ```c_cpp
 #include <stdio.h>
@@ -20,14 +34,15 @@ int main() {
 	// your code goes here
     int num;
     scanf("%d", &num);
-    int sum = 0;
     
-    while (num > 0) {
-        if (num % 2 == 0) sum += num;
-        num--;
+    int reverse = 0;
+    
+    while (num != 0) {
+        reverse = reverse * 10 + (num % 10);
+        num /= 10;
     }
     
-    printf("%d", sum);
+    printf("%d", reverse);
 }
 
 
