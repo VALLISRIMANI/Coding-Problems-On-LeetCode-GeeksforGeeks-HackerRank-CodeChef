@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class CountryCapital {
+class CountryCapital {
 
     public static void main(String[] args) {
         // 1. Create a HashMap called countryCapitals
