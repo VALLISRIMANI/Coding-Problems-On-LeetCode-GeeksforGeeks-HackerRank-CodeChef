@@ -31,12 +31,12 @@ Not exists
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-01T17:44:36.185Z  
+**Submitted:** 2026-09-01T17:44:43.104Z  
 
 ```java
 import java.util.HashMap;
 
-public class CountryCapital {
+class CountryCapital {
 
     public static void main(String[] args) {
         // 1. Create a HashMap called countryCapitals
