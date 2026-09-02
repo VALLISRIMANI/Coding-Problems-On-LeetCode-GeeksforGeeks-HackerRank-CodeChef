@@ -1,0 +1,16 @@
+// Solution
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    scanf("%d", &n);
+    char str[n];
+    scanf("%s", &str);
+    for(int i = 0; i < n; i++){
+        char ch = str[i];
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+           count++;
+    }
+    printf("%d", count);
+    return 0;
+}
