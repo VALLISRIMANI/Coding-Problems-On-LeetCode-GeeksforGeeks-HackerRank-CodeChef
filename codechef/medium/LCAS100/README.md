@@ -4,22 +4,32 @@
 
 ## Problem
 
-### Find Max In Array
+### Array Sum
 
-Write a C program that takes input for an array of 8 integers and finds the maximum value in the array. Print the maximum value.
+Write a C program that takes input for an array of 5 integers and calculates the sum of all elements in the array. Print the sum.
 
-### Input Format
-- A single line containing 8 space-separated integers.
 ### Sample 1:
 Input
 Output
 
 ```
-1 3 2 4 6 5 7 8
+1 2 3 4 5
 ```
 
 ```
-8
+15
+```
+
+### Sample 2:
+Input
+Output
+
+```
+2 3 1 6 9
+```
+
+```
+21
 ```
 
 ## Solution
@@ -27,32 +37,27 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-03T06:21:10.358Z  
+**Submitted:** 2026-09-03T06:20:54.501Z  
 
 ```c_cpp
 #include <stdio.h>
 
 int main() {
-    int values[8];
-    int max;
+    int numbers[5];
+    int sum = 0;
 
-    // Input: Enter 8 integers
-    for (int i = 0; i < 8; i++) {
-        scanf("%d", &values[i]);
+    // Input: Enter 5 integers
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numbers[i]);
     }
 
-    // Initialize max with the first element
-    max = values[0];
-
-    // Find the maximum value in the array
-    for (int i = 1; i < 8; i++) {
-        if (values[i] > max) {
-            max = values[i];
-        }
+    // Calculate the sum of array elements
+    for (int i = 0; i < 5; i++) {
+        sum += numbers[i];
     }
 
-    // Output: Print the maximum value
-    printf("%d\n", max);
+    // Output: Print the sum
+    printf("%d\n", sum);
 
     return 0;
 }
