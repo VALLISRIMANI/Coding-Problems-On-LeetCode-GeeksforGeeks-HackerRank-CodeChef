@@ -2,14 +2,15 @@
 
 // Function to find maximum  element in an array using pointers
 void findMax(int arr[], int size, int *max) {
-   // Complete the function 
-   *max = arr[0];
-   
-   int i;
-   for (i = 1; i < size; i++) {
-       if (arr[i] > *max) *max = arr[i];
-   }
-   
+    // Initialize max with the first element of the array
+    *max = arr[0];
+
+    // Traverse the array to find max and min
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > *max) {
+            *max = arr[i];
+        } 
+    }
 }
 
 int main() {
