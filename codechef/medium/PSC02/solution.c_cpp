@@ -3,24 +3,23 @@
 
 // Function to reverse a string using pointers
 void reverseString(char *str) {
-   // Complete the function 
-   char *start = str;
-   char *end = str;
-   char temp;
-   
-   while (*end != '\0') {
-       end++;
-   }
-   end--;
-   
-   while (start < end) {
-       temp = *start;
-       *start = *end;
-       *end = temp;
-       
-       start++;
-       end--;
-   }
+    // Pointer to the beginning of the string
+    char *start = str;
+    // Pointer to the end of the string (excluding the null terminator)
+    char *end = str + strlen(str) - 1;
+    char temp;
+
+    // Reverse the string by swapping characters from start to end
+    while (start < end) {
+        // Swap characters
+        temp = *start;
+        *start = *end;
+        *end = temp;
+
+        // Move pointers
+        start++;
+        end--;
+    }
 }
 
 int main() {
