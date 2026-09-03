@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int power(int base, int exponent) {
+    int result = 1;
+
+    for (int i = 1; i <= exponent; i++) {
+        result *= base;
+    }
+
+    return result;
+}
+
+int main() {
+    int base, exponent;
+    scanf("%d", &base);
+    scanf("%d", &exponent);
+
+    int result = power(base, exponent);
+
+    printf("%d\n",result);
+
+    return 0;
+}
