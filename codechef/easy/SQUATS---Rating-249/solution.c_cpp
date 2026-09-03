@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    // Loop for each test case
+    while (t--) {
+        int x;
+        scanf("%d", &x);
+
+        // Multiply the number of sets by 15 and print the result
+        printf("%d\n", x * 15);
+    }
+    
+    return 0;
+}
