@@ -4,6 +4,8 @@
 
 ## Problem
 
+### Find Max
+
 Write a C program to find the maximum and minimum elements in an array using pointers.
 
 ### Input Format
@@ -29,21 +31,22 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-26T13:26:19.423Z  
+**Submitted:** 2026-09-03T06:25:20.826Z  
 
 ```c_cpp
 #include <stdio.h>
 
 // Function to find maximum  element in an array using pointers
 void findMax(int arr[], int size, int *max) {
-   // Complete the function 
-   *max = arr[0];
-   
-   int i;
-   for (i = 1; i < size; i++) {
-       if (arr[i] > *max) *max = arr[i];
-   }
-   
+    // Initialize max with the first element of the array
+    *max = arr[0];
+
+    // Traverse the array to find max and min
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > *max) {
+            *max = arr[i];
+        } 
+    }
 }
 
 int main() {
