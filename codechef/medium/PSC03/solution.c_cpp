@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+const float pi = 3.14159;
+// Structure "Circle"
+struct Circle {
+    double radius;
+};
+
+// Function to calculate the area of a circle
+double calculateArea(struct Circle c) {
+    return pi * c.radius * c.radius; 
+}
+
+// Function to calculate the perimeter (circumference) of a circle
+double calculatePerimeter(struct Circle c) {
+    return 2 * pi * c.radius; 
+}
+
+int main() {
+    // Declare variables to store detail for the circle
+    struct Circle circle;
+
+    // Input radius of the circle
+  
+    scanf("%lf", &circle.radius);
+
+    // Calculate and output the Area and Perimeter of the circle
+    printf("%.2lf ", calculateArea(circle));
+    printf("%.2lf", calculatePerimeter(circle));
+
+
+    return 0;
+}
