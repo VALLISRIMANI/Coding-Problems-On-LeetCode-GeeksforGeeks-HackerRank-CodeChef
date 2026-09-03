@@ -4,6 +4,8 @@
 
 ## Problem
 
+### Reverse String
+
 Write a C program to reverse a given string using pointers.
 
 ### Input Format
@@ -27,7 +29,7 @@ fehcedoc
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-26T13:34:06.887Z  
+**Submitted:** 2026-09-03T06:25:31.463Z  
 
 ```c_cpp
 #include <stdio.h>
@@ -35,24 +37,23 @@ fehcedoc
 
 // Function to reverse a string using pointers
 void reverseString(char *str) {
-   // Complete the function 
-   char *start = str;
-   char *end = str;
-   char temp;
-   
-   while (*end != '\0') {
-       end++;
-   }
-   end--;
-   
-   while (start < end) {
-       temp = *start;
-       *start = *end;
-       *end = temp;
-       
-       start++;
-       end--;
-   }
+    // Pointer to the beginning of the string
+    char *start = str;
+    // Pointer to the end of the string (excluding the null terminator)
+    char *end = str + strlen(str) - 1;
+    char temp;
+
+    // Reverse the string by swapping characters from start to end
+    while (start < end) {
+        // Swap characters
+        temp = *start;
+        *start = *end;
+        *end = temp;
+
+        // Move pointers
+        start++;
+        end--;
+    }
 }
 
 int main() {
