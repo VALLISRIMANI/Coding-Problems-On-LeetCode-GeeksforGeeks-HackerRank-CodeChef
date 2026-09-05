@@ -4,31 +4,36 @@
 
 ## Problem
 
-### Max User Favorites SQL Challenge
+### SQL Query Filter Properties Amenities
 ### Task
 
-Get the user with the maximum number of favorite properties.
+Find the properties that have all the following amenities available: 'Heating' and 'Kitchen'.
 
 - You can refer to the dataset here.
 ### Output Format
 
-user_id
-favorite_count
+property_id
+title
+location
 
 ## Solution
 
 **Language:** SQL  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-04T13:56:35.561Z  
+**Submitted:** 2026-09-05T07:03:02.875Z  
 
 ```sql
--- your code goes here
-select user_id, count(property_id) as favorite_count 
-from favorites 
-group by user_id
-order by favorite_count desc
-limit 1;
+SELECT prop.property_id, prop.title, prop.location
+FROM Properties prop
+WHERE prop.property_id IN (
+    SELECT pa.property_id
+    FROM PropertyAmenities pa
+    JOIN Amenities am ON pa.amenity_id = am.amenity_id
+    WHERE am.name IN ('Heating', 'Kitchen')
+    GROUP BY pa.property_id
+    HAVING COUNT(DISTINCT am.name) = 2
+);
 ```
 
 ---
