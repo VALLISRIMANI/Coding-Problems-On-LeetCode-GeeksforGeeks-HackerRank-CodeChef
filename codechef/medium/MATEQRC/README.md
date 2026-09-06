@@ -4,99 +4,63 @@
 
 ## Problem
 
-### Equal Rows and Columns
-
-Given a `N x N` integer matrix, find the no. of pairs of row and column which are equal.
-
-For eg. in the following matrix:
-
-Number of equal pairs of row and columns is:  **2**  (Row 2 and column 2 are equal. Similarly, row 3 and column 3 are also equal)
-
-### Input Format
-- The first line of input will contain a single integer $N$, denoting the no. of rows and columns in the matrix.
-- Next $N$ lines contains $N$ space separated integers, the elements of the matrix.
-### Output Format
-- Output on a single line the no. of pairs of row and columns which are equal.
-### Constraints
-- $1 \leq N \leq 100$
-- The elements of the matrix are non-negative and won't exceed 1000.
-### Sample 1:
-Input
-Output
-
-```
-4
-9 0 0 3
-0 1 1 5
-0 1 1 5
-8 5 5 1
-```
-
-```
-4
-```
-
-### Explanation:
-
-Row 2 and column 2 are equal.
-
-Row 2 and column 3 are equal.
-
-Row 3 and column 2 are equal.
-
-Row 3 and column 3 are equal.
+_Description not available._
 
 ## Solution
 
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-06T10:56:40.628Z  
+**Submitted:** 2026-09-06T10:56:17.539Z  
 
 ```java
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    public static int equalPairs(int[][] mat) {
-        int ans = 0;
-        HashMap<String, Integer> mp = new HashMap<>();
+    public static int firstOne(int[] row, int low, int high) {
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if ((mid == 0 || row[mid - 1] == 0) && row[mid] == 1) {
+                return mid;
+            } else if (row[mid] == 0) {
+                return firstOne(row, mid + 1, high);
+            } else {
+                return firstOne(row, low, mid - 1);
+            }
+        }
+        return -1; 
+    }
 
+    public static int maxOneRow(int[][] mat) {
+        int maxones = 0;
+        int rowIdx = 0;
         for (int i = 0; i < mat.length; i++) {
-            StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < mat[i].length; j++) {
-                sb.append(mat[i][j]);
-                sb.append(",");
+            int ones = mat[i].length - firstOne(mat[i], 0, mat[i].length - 1);
+            if (ones > maxones) {
+                maxones = ones;
+                rowIdx = i;
             }
-            mp.put(sb.toString(), mp.getOrDefault(sb.toString(), 0) + 1);
         }
-
-        for (int i = 0; i < mat[0].length; i++) {
-            StringBuilder sb = new StringBuilder();
-            for (int j = 0; j < mat.length; j++) {
-                sb.append(mat[j][i]);
-                sb.append(",");
-            }
-            ans += mp.getOrDefault(sb.toString(), 0);
-        }
-
-        return ans;
+        return rowIdx + 1;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
+        int m = scanner.nextInt();
         assert (1 <= n && n <= 100);
+        assert (1 <= m && m <= 100);
 
-        int[][] mat = new int[n][n];
+        int[][] mat = new int[n][m];
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 mat[i][j] = scanner.nextInt();
+                assert (mat[i][j] == 0 || mat[i][j] == 1);
             }
         }
 
-        System.out.println(equalPairs(mat));
+        System.out.println(maxOneRow(mat));
     }
 }
 
