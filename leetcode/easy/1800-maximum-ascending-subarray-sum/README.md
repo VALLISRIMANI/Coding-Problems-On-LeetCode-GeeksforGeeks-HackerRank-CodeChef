@@ -47,9 +47,9 @@ Explanation: [10,11,12] is the ascending subarray with the maximum sum of 33.
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.5 MB  
-**Submitted:** 2026-09-11T04:02:05.343Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 43.3 MB (beats 9.18%)  
+**Submitted:** 2026-09-11T04:05:36.005Z  
 
 ```java
 class Solution {
@@ -58,12 +58,12 @@ class Solution {
         int maxSum = Integer.MIN_VALUE;
 
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] < nums[i - 1]) {
+            if (nums[i] <= nums[i - 1]) {
                 maxSum = Math.max(maxSum, sum);
                 sum = 0;
-            } else {
-                sum += nums[i];
             }
+            
+            sum += nums[i];
         }
         
         maxSum = Math.max(maxSum, sum);
