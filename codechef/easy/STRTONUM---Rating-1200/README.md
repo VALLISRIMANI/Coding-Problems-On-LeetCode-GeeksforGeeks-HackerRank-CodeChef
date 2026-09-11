@@ -43,7 +43,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-11T04:40:19.635Z  
+**Submitted:** 2026-09-11T04:40:30.005Z  
 
 ```java
 public static long stringToNumber(String str) {
