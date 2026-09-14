@@ -42,9 +42,9 @@ Explanation: The string s has been split into three parts, each part has 2 chara
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.8 MB  
-**Submitted:** 2026-09-14T11:30:39.999Z  
+**Runtime:** 11 ms (beats 66.81%)  
+**Memory:** 46.6 MB (beats 31.17%)  
+**Submitted:** 2026-09-14T11:30:48.344Z  
 
 ```java
 class Solution {
