@@ -78,7 +78,7 @@ After removing the outermost from each -> `"" + "" = ""`
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T12:30:37.166Z  
+**Submitted:** 2026-09-16T12:31:53.117Z  
 
 ```java
 public static String removeOuterParentheses(String s) {
