@@ -1,30 +1,26 @@
-class QueueUsingStacks {
-    private Stack<Long> inStack = new Stack<>();
-    private Stack<Long> outStack = new Stack<>();
+class StackUsingQueues {
+    Queue<Integer> q1 = new LinkedList<>();
+    Queue<Integer> q2 = new LinkedList<>();
 
-    public void pushElement(long x) {
-        inStack.push(x);
-    }
-
-    public long popElement() {
-        if (outStack.isEmpty()) {
-            while (!inStack.isEmpty()) {
-                outStack.push(inStack.pop());
-            }
+    public void push(int x) {
+        q2.add(x);
+        while (!q1.isEmpty()) {
+            q2.add(q1.poll());
         }
-        return outStack.pop();
+        Queue<Integer> temp = q1;
+        q1 = q2;
+        q2 = temp;
     }
 
-    public long peekElement() {
-        if (outStack.isEmpty()) {
-            while (!inStack.isEmpty()) {
-                outStack.push(inStack.pop());
-            }
-        }
-        return outStack.peek();
+    public int pop() {
+        return q1.poll();
     }
 
-    public boolean isEmptyResult() {
-        return inStack.isEmpty() && outStack.isEmpty();
+    public int top() {
+        return q1.peek();
+    }
+
+    public boolean empty() {
+        return q1.isEmpty();
     }
 }
