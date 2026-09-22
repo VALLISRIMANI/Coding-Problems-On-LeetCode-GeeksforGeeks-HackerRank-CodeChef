@@ -1,0 +1,82 @@
+# NFXON01
+
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
+
+## Problem
+
+### Chef Circular Search
+
+Chef has a  **circular list of integers**  and wants to find the  **next strictly greater element**  for every number in the list.
+
+- Since the list is circular, after reaching the end, Chef continues searching from the beginning.
+- For each number, Chef wants the first strictly greater element found while moving forward.
+- If no greater number exists, record $-1$.
+
+Help Chef efficiently find the next strictly greater element for every item in his circular list!
+
+## Function Declaration
+- Function Name $findNextGreaterElements$
+- Parameters $numbers$: a list of integers representing the circular list
+- Return Value An array of integers where each position contains the next greater element of the corresponding item in $numbers$, or $-1$ if none exists.
+## Constraints
+- $1 \leq T \leq 100$
+- $1 \leq N \leq 10^4$
+- $-10^9 \leq numbers[i] \leq 10^9$
+### Input Format
+- The first line contains a single integer $T$ — the number of test cases.
+- For each test case: The first line contains an integer $N$ — the size of $numbers$. The second line contains $N$ integers representing $numbers$.
+### Output Format
+- For each test case, print $N$ integers in one line.
+- Each integer represents the next greater element for the corresponding number in $numbers$, or $-1$ if no such element exists.
+### Sample 1:
+Input
+Output
+
+```
+2
+3
+4 1 2
+5
+5 4 3 2 1
+```
+
+```
+-1 2 4
+-1 5 5 5 5
+```
+
+### Explanation:
+- $4$: Numbers after $4$ in the circular list are [1, 2]. None are greater, so the result is $-1$
+- $1$: Numbers after $1$ are [2, 4]. The first greater number is $2$
+- $2$: Numbers after $2$ are [4, 1]. The first greater number is $4$
+
+## Solution
+
+**Language:** Java  
+**Runtime:** N/A  
+**Memory:** N/A  
+**Submitted:** 2026-09-22T15:59:49.964Z  
+
+```java
+    public static int[] findNextGreaterElements(int[] numbers) {
+        int n = numbers.length;
+        int[] result = new int[n];
+        java.util.Arrays.fill(result, -1);
+        java.util.Stack<Integer> stack = new java.util.Stack<>();
+        for (int i = 2 * n - 1; i >= 0; i--) {
+            int index = i % n;
+            while (!stack.isEmpty() && numbers[stack.peek()] <= numbers[index]) {
+                stack.pop();
+            }
+            if (!stack.isEmpty()) {
+                result[index] = numbers[stack.peek()];
+            }
+            stack.push(index);
+        }
+        return result;
+    }
+```
+
+---
+
+[View on CodeChef](https://www.codechef.com/problems/NFXON01)
