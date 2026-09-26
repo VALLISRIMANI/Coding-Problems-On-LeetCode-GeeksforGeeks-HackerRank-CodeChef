@@ -59,7 +59,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T06:26:02.993Z  
+**Submitted:** 2026-09-26T06:29:57.924Z  
 
 ```java
 import java.util.*;
@@ -78,26 +78,21 @@ class Codechef
             int N = sc.nextInt();
             int[][] arr = new int[N + 1][2];
             
+            int[] temp = new int[N + 1];
+            
             for (int i = 1; i <= N; i++) {
                 arr[i][0] = sc.nextInt();
                 arr[i][1] = sc.nextInt();
+                
+                for (int t = arr[i][0]; t <= arr[i][1]; t++) {
+                    temp[t]++;
+                }
             }
             
             List<Integer> result = new ArrayList<>();
             
             for (int i = 1; i <= N; i++) {
-                int count = 0;
-                
-                for (int j = 1; j <= N; j++) {
-                    int l = arr[j][0];
-                    int r = arr[j][1];
-                    
-                    if (i != j && (l >= i && i <= r)) {
-                        count++;
-                    }
-                }
-                
-                if (count > 0 && (i < arr[i][0] || i > arr[i][1])) {
+                if (temp[i] > 0 && (i < arr[i][0] || i > arr[i][1])) {
                     result.add(i);
                 }
             }
