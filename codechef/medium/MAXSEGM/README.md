@@ -50,7 +50,7 @@ The range [2, 4] is an  *unique*  range because (1, 2, 0) has no duplicates. Its
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T06:04:16.832Z  
+**Submitted:** 2026-09-26T06:21:02.201Z  
 
 ```java
 import java.util.*;
@@ -62,27 +62,30 @@ class Codechef
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
         
         while (T-- > 0) {
-            int N = sc.nextInt();
+            int N = Integer.parseInt(br.readLine());
+            
+            StringTokenizer st1 = new StringTokenizer(br.readLine());
             
             int[] C = new int[N];
             for (int i = 0; i < N; i++) {
-                C[i] = sc.nextInt();
+                C[i] = Integer.parseInt(st1.nextToken());
             }
             
+            StringTokenizer st2 = new StringTokenizer(br.readLine());
             int[] W = new int[N];
             for (int i = 0; i < N; i++) {
-                W[i] = sc.nextInt();
+                W[i] = Integer.parseInt(st2.nextToken());
             }
             
             long maxSum = maximumSum(C, W, N);
             System.out.println(maxSum);
         }
         
-        sc.close();
+        br.close();
 	}
 	
 	
