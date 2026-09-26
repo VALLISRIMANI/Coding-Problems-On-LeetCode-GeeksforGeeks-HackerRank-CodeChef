@@ -59,7 +59,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T05:55:13.002Z  
+**Submitted:** 2026-09-26T06:26:02.993Z  
 
 ```java
 import java.util.*;
@@ -97,7 +97,7 @@ class Codechef
                     }
                 }
                 
-                if (count > 0) {
+                if (count > 0 && (i < arr[i][0] || i > arr[i][1])) {
                     result.add(i);
                 }
             }
