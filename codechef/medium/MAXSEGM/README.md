@@ -50,7 +50,7 @@ The range [2, 4] is an  *unique*  range because (1, 2, 0) has no duplicates. Its
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T05:01:19.986Z  
+**Submitted:** 2026-09-26T06:04:16.832Z  
 
 ```java
 import java.util.*;
@@ -78,7 +78,7 @@ class Codechef
                 W[i] = sc.nextInt();
             }
             
-            int maxSum = maximumSum(C, W, N);
+            long maxSum = maximumSum(C, W, N);
             System.out.println(maxSum);
         }
         
@@ -86,7 +86,7 @@ class Codechef
 	}
 	
 	
-	public static int maximumSum(int[] C, int[] W, int N) {
+	public static long maximumSum(int[] C, int[] W, int N) {
 	    HashSet<Integer> set = new HashSet<>();
 	    
 	    int left = 0;
@@ -107,7 +107,7 @@ class Codechef
 	        maxSum = Math.max(maxSum, sum);
 	    }
 	    
-	    return maxSum;
+	    return (long) maxSum;
 	}
 }
 
