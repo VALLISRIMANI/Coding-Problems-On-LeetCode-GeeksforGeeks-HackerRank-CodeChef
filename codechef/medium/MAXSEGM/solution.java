@@ -23,7 +23,7 @@ class Codechef
                 W[i] = sc.nextInt();
             }
             
-            int maxSum = maximumSum(C, W, N);
+            long maxSum = maximumSum(C, W, N);
             System.out.println(maxSum);
         }
         
@@ -31,7 +31,7 @@ class Codechef
 	}
 	
 	
-	public static int maximumSum(int[] C, int[] W, int N) {
+	public static long maximumSum(int[] C, int[] W, int N) {
 	    HashSet<Integer> set = new HashSet<>();
 	    
 	    int left = 0;
@@ -52,6 +52,6 @@ class Codechef
 	        maxSum = Math.max(maxSum, sum);
 	    }
 	    
-	    return maxSum;
+	    return (long) maxSum;
 	}
 }
