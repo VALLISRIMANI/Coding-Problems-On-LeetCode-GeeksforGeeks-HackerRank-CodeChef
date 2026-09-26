@@ -7,27 +7,30 @@ class Codechef
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
         
         while (T-- > 0) {
-            int N = sc.nextInt();
+            int N = Integer.parseInt(br.readLine());
+            
+            StringTokenizer st1 = new StringTokenizer(br.readLine());
             
             int[] C = new int[N];
             for (int i = 0; i < N; i++) {
-                C[i] = sc.nextInt();
+                C[i] = Integer.parseInt(st1.nextToken());
             }
             
+            StringTokenizer st2 = new StringTokenizer(br.readLine());
             int[] W = new int[N];
             for (int i = 0; i < N; i++) {
-                W[i] = sc.nextInt();
+                W[i] = Integer.parseInt(st2.nextToken());
             }
             
             long maxSum = maximumSum(C, W, N);
             System.out.println(maxSum);
         }
         
-        sc.close();
+        br.close();
 	}
 	
 	
