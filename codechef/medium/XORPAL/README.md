@@ -69,7 +69,7 @@ NO
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T05:37:30.985Z  
+**Submitted:** 2026-09-26T06:49:35.045Z  
 
 ```java
 import java.util.*;
@@ -94,7 +94,7 @@ class Codechef
         sc.close();
 	}
 	
-	public static boolean isXORPalindrome(int N, String S) {
+	public static boolean isXORPalindrome (int N, String S) {
 	    HashMap<Character, Integer> map = new HashMap<>();
 	    
 	    for (char ch : S.toCharArray()) {
