@@ -20,7 +20,7 @@ class Codechef
         sc.close();
 	}
 	
-	public static boolean isXORPalindrome(int N, String S) {
+	public static boolean isXORPalindrome (int N, String S) {
 	    HashMap<Character, Integer> map = new HashMap<>();
 	    
 	    for (char ch : S.toCharArray()) {
