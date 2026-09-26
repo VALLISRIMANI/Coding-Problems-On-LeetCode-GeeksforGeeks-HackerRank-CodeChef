@@ -33,7 +33,7 @@ class Codechef
                     }
                 }
                 
-                if (count > 0) {
+                if (count > 0 && (i < arr[i][0] || i > arr[i][1])) {
                     result.add(i);
                 }
             }
