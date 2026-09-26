@@ -74,7 +74,7 @@ Output
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-26T05:12:05.863Z  
+**Submitted:** 2026-09-26T06:12:37.992Z  
 
 ```java
 class Solution {
@@ -93,6 +93,8 @@ class Solution {
         
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[1], b[1]));
         
+       
+        /* 
         int count = 0;
         int endTime = -1;
         
@@ -107,6 +109,22 @@ class Solution {
         }
         
         return count;
+        */
+        
+        int count = 1;
+        int endTime = intervals[0][1];
+        
+        for (int i = 1; i < n; i++) {
+            if (intervals[i][0] >= endTime) {
+                count++;
+            }
+            
+            endTime = Math.min(endTime, intervals[i][1]);
+            
+        }
+        
+        return n - count;
+        
     }
 }
 ```
