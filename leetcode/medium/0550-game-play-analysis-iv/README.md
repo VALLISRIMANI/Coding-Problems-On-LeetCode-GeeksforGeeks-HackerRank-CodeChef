@@ -55,9 +55,9 @@ Only the player with id 1 logged back in after the first day he had logged in so
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 80 ms  
-**Memory:** 0B  
-**Submitted:** 2026-09-29T13:27:48.884Z  
+**Runtime:** 680 ms (beats 34.67%)  
+**Memory:** 0B (beats 100.00%)  
+**Submitted:** 2026-09-29T13:28:40.866Z  
 
 ```sql
 # Write your MySQL query statement below
@@ -85,7 +85,8 @@ WITH first_login AS (
     GROUP BY player_id
 )
 SELECT ROUND(
-    COUNT(DISTINCT a.player_id) / COUNT(DISTINCT f.player_id),
+    COUNT(DISTINCT a.player_id) / 
+    COUNT(DISTINCT f.player_id),
     2
 ) AS fraction
 FROM first_login f
