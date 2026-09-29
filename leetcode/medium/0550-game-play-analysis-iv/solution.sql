@@ -23,7 +23,8 @@ WITH first_login AS (
     GROUP BY player_id
 )
 SELECT ROUND(
-    COUNT(DISTINCT a.player_id) / COUNT(DISTINCT f.player_id),
+    COUNT(DISTINCT a.player_id) / 
+    COUNT(DISTINCT f.player_id),
     2
 ) AS fraction
 FROM first_login f
