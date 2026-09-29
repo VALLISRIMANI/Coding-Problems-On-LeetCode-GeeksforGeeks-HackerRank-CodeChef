@@ -13,7 +13,7 @@ How do we print output on separate lines in JavaScript?
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T14:03:06.056Z  
+**Submitted:** 2026-09-29T14:03:07.586Z  
 
 ```cpp
 // Update the '__'  (underscores) below to solve the problem
