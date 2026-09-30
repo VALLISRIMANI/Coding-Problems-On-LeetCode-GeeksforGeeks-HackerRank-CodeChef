@@ -73,9 +73,9 @@ Result table is ordered by user_id in ascending order.
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 87 ms  
-**Memory:** 0B  
-**Submitted:** 2026-09-30T13:27:51.926Z  
+**Runtime:** 495 ms (beats 51.73%)  
+**Memory:** 0B (beats 100.00%)  
+**Submitted:** 2026-09-30T13:27:57.158Z  
 
 ```sql
 # Write your MySQL query statement below
