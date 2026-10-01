@@ -55,9 +55,9 @@ s becomes "0" + "0" + "0" = "000", whose length is equal to k, so we return "000
 ## Solution
 
 **Language:** Java  
-**Runtime:** 1 ms (beats 98.72%)  
-**Memory:** 43.2 MB (beats 16.42%)  
-**Submitted:** 2026-10-01T04:22:44.180Z  
+**Runtime:** 0 ms  
+**Memory:** 42.9 MB  
+**Submitted:** 2026-10-01T04:25:18.679Z  
 
 ```java
 class Solution {
@@ -71,6 +71,7 @@ class Solution {
         return sb.toString();
     }
 
+    /*
     public StringBuilder sum(String s, int k) {
         int n = s.length();
         StringBuilder sb = new StringBuilder();
@@ -95,6 +96,27 @@ class Solution {
                 sb.append(sum);
             }
 
+            idx += k;
+        }
+
+        return sb;
+    }
+    */
+
+    public StringBuilder sum(String s, int k) {
+        int n = s.length();
+        StringBuilder sb = new StringBuilder();
+        int idx = 0;
+
+        while (idx < n) {
+            int sum = 0;
+            int limit = Math.min(idx + k, n);
+
+            for (int i = idx; i < limit; i++) {
+                sum += s.charAt(i) - '0';
+            }
+
+            sb.append(sum);
             idx += k;
         }
 
