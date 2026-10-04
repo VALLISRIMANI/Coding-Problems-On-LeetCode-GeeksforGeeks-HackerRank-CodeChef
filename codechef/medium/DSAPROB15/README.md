@@ -81,7 +81,7 @@ Thus, the total number of such pairs is 9.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-04T07:50:44.342Z  
+**Submitted:** 2026-10-04T07:51:20.539Z  
 
 ```java
 import java.util.*;
