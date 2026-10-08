@@ -1,4 +1,4 @@
-// Complete the code
-
-var number = 20;
-console.log(number - 1);
+// Correct the variable name to adhere to the rules.
+var first_name = "Code";
+var last_name = "Chef";
+console.log(first_name, last_name);
