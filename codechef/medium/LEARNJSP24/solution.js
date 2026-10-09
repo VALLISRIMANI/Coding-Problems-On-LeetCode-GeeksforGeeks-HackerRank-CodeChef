@@ -1,4 +1,6 @@
 // your code goes here
-var a = "Learning";
-var b = "is fun!";
-console.log(a, b);
+var radius = 8.9;
+const pi = 3.14;
+var area = pi * radius * radius;
+
+console.log(area);
