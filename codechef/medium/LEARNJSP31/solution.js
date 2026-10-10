@@ -1,6 +1,9 @@
-// Replace the underscores with required values
+// Solution as follows
 
-var x = true;
-var y = false;
+var s = 14;
 
-console.log(x, y);
+var area = s * s;
+var cost = area * 7;
+
+console.log(area);
+console.log(cost);
