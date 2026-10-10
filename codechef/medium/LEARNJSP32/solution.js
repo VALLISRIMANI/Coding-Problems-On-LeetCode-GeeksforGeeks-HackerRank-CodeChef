@@ -1,9 +1,9 @@
 // Solution as follows
 
-var s = 14;
+var a = -50;
+var b = 40;
 
-var area = s * s;
-var cost = area * 7;
+var total = a + b;
+var product = a * b;
 
-console.log(area);
-console.log(cost);
+console.log(total, product);
