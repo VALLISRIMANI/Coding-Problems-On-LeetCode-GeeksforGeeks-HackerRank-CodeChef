@@ -50,9 +50,9 @@ Explanation: There are 10 pairs of indices that satisfy the conditions in the st
 ## Solution
 
 **Language:** Java  
-**Runtime:** 3 ms (beats 49.52%)  
-**Memory:** 44.3 MB (beats 29.10%)  
-**Submitted:** 2026-10-13T14:31:21.916Z  
+**Runtime:** 0 ms  
+**Memory:** 42.7 MB  
+**Submitted:** 2026-10-13T14:31:18.734Z  
 
 ```java
 class Solution {
