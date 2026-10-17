@@ -1,12 +1,16 @@
-// Observe the code and submit, we'll discuss about the syntaxes shortly
+// Naive solution
 
-function calculateSquareAndCube(num) {
-  console.log(num * num);
-  console.log(num * num * num);  
-}
+var two = 2;
+var three = 3;
+var four = 4;
 
-// Using the above function for numbers 2, 3, and 4
 
-calculateSquareAndCube(2);
-calculateSquareAndCube(3);
-calculateSquareAndCube(4);
+console.log(two * two);
+console.log(two * two * two);
+
+console.log(three * three);
+console.log(three * three * three);
+
+console.log(four * four);
+console.log(four * four * four);
+
