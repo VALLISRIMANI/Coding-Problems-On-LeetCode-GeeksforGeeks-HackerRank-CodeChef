@@ -50,33 +50,35 @@ Output: 4
 ## Solution
 
 **Language:** Java  
-**Runtime:** 12 ms (beats 7.06%)  
-**Memory:** 46.8 MB (beats 93.01%)  
-**Submitted:** 2026-10-18T16:04:51.771Z  
+**Runtime:** 8 ms (beats 20.29%)  
+**Memory:** 47.1 MB (beats 64.38%)  
+**Submitted:** 2026-10-18T16:06:31.972Z  
 
 ```java
 class Solution {
     public int islandPerimeter(int[][] grid) {
-        int perimeter = 0;
+        int land = 0;
+        int shared = 0;
 
-        int[][] dir = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        int rows = grid.length;
+        int cols = grid[0].length;
 
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[0].length; j++) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+
                 if (grid[i][j] == 1) {
-                    for (int[] d : dir) {
-                        int nr = i + d[0];
-                        int nc = j + d[1];
+                    land++;
 
-                        if (nr < 0 || nc < 0 || nr >= grid.length || nc >= grid[0].length || grid[nr][nc] == 0) {
-                            perimeter++;
-                        }
-                    }
+                    if (i + 1 < rows && grid[i + 1][j] == 1)
+                        shared++;
+
+                    if (j + 1 < cols && grid[i][j + 1] == 1)
+                        shared++;
                 }
             }
         }
 
-        return perimeter;
+        return land * 4 - shared * 2;
     }
 }
 ```
