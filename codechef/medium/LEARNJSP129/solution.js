@@ -1,20 +1,18 @@
-function greet(name){
-    return "Hello, " +  name + "!";
+// Click on submit to see the result
+
+// Global variable
+var x = 10;
+
+function myFunction(){
+    // Local variable with the same name as the global variable
+    var x = 20;
+    
+    // Accesses the local variable
+    console.log(x);
 }
-function capitalize(text){
-  // toUpperCase() is an inbuilt JS method that converts a string to uppercase letters
-    return text.toUpperCase();
-}
 
+myFunction();
+// Output: 20
 
-function greetAndCapitalize(name){
-   // complete the function code 
-   return greet(capitalize(name));
-}
-
-// Call the functions
-var name = "Alice";
-var finalResult = greetAndCapitalize(name);
-
-// Display the results
-console.log("Final Result:", finalResult);
+console.log(x);
+// Output: 10 (global variable is not affected)
