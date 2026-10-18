@@ -4,72 +4,34 @@
 
 ## Problem
 
-### Calling a function within function
-
-Listen
-
-Functions can also call other functions.
-
-Check the sample code given below
-
-```
-// Function to calculate the square of a number
-function square(num){
-    return num * num;
-}
-function squareAndDouble(num){
-    // Call the square function to calculate square
-    var squared = square(num);
-
-    // Double the squared result
-    return 2 * squared;
-}
-// Call the squareAndDouble function with the argument 3
-result = squareAndDouble(3);
-
-console.log("Result:", result);    // Output will be 'Result: 18'
-
-```
-
-### Task
-- The editor contains an incomplete code.
-- Update the function greetAndCapitalize by calling the above-defined functions inside it to get the expected output.
-
- **Expected output** 
-
-```
-Final Result: HELLO, ALICE!
-
-```
+_Description not available._
 
 ## Solution
 
 **Language:** JavaScript  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-18T15:54:50.957Z  
+**Submitted:** 2026-10-18T15:53:55.346Z  
 
 ```js
-function greet(name){
-    return "Hello, " +  name + "!";
+// Click on submit to see the result
+
+// Global variable
+var x = 10;
+
+function myFunction(){
+    // Local variable with the same name as the global variable
+    var x = 20;
+    
+    // Accesses the local variable
+    console.log(x);
 }
-function capitalize(text){
-  // toUpperCase() is an inbuilt JS method that converts a string to uppercase letters
-    return text.toUpperCase();
-}
 
+myFunction();
+// Output: 20
 
-function greetAndCapitalize(name){
-   // complete the function code 
-   return greet(capitalize(name));
-}
-
-// Call the functions
-var name = "Alice";
-var finalResult = greetAndCapitalize(name);
-
-// Display the results
-console.log("Final Result:", finalResult);
+console.log(x);
+// Output: 10 (global variable is not affected)
 ```
 
 ---
