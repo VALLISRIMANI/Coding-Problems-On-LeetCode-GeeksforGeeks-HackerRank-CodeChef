@@ -2,9 +2,9 @@
 
 # 🧠 Coding Solutions
 
-![Total Solved](https://img.shields.io/badge/Total_Solved-779-blue?style=for-the-badge)
-![Streak](https://img.shields.io/badge/Streak-70_days-orange?style=for-the-badge)
-![Last Synced](https://img.shields.io/badge/Last_Synced-20--10--2026-green?style=for-the-badge)
+![Total Solved](https://img.shields.io/badge/Total_Solved-780-blue?style=for-the-badge)
+![Streak](https://img.shields.io/badge/Streak-71_days-orange?style=for-the-badge)
+![Last Synced](https://img.shields.io/badge/Last_Synced-21--10--2026-green?style=for-the-badge)
 
 > 🚀 Auto-synced by [**PushMyCode**](https://github.com/PushMyCode-HQ) — solve it, forget it, it's on GitHub.
 
@@ -16,16 +16,16 @@
 
 | Difficulty | Solved |
 |:---:|:---:|
-| 🟢 Easy | **254** |
+| 🟢 Easy | **255** |
 | 🟡 Medium | **454** |
 | 🔴 Hard | **27** |
-| **Total** | **779** |
+| **Total** | **780** |
 
 ## 🛠️ Languages
 
 | Language | Solutions |
 |:---:|:---:|
-| Java | **541** |
+| Java | **542** |
 | c_cpp | **105** |
 | C++ | **49** |
 | JavaScript | **47** |
@@ -48,6 +48,6 @@
 
 <div align="center">
 
-*Last updated: 2026-10-20* · Powered by [**PushMyCode**](https://github.com/PushMyCode-HQ)
+*Last updated: 2026-10-21* · Powered by [**PushMyCode**](https://github.com/PushMyCode-HQ)
 
 </div>
