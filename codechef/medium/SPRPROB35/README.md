@@ -52,7 +52,7 @@ The GET API is already implemented to see all added todos, but your focus is on 
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-22T10:53:31.440Z  
+**Submitted:** 2026-10-22T10:53:55.128Z  
 
 ```cpp
 
@@ -64,17 +64,17 @@ The GET API is already implemented to see all added todos, but your focus is on 
     @GetMapping
     private List<Todo> todos = new ArrayList<>();
 
-
     // In-memory list to store todos
-@RequestMapping("/todos")
-public class TodoController {
-@RestController
-import java.util.ArrayList;
-import java.util.List;
+    @PostMapping
+    public String addTodo(@RequestBody Todo todo) {
+        // Your code here
+        todos.add(todo);
+        return "Todo added successfully";
+    }
+}
 
-import org.springframework.web.bind.annotation.*;
-
-package com.example.demo;
+// Todo class to represent the data
+class Todo {
 ```
 
 ---
