@@ -57,24 +57,17 @@ At time 30, one of the two pigs must die, and the poisonous bucket is the one it
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 41.6 MB (beats 92.64%)  
-**Submitted:** 2026-10-25T15:10:34.649Z  
+**Runtime:** 0 ms  
+**Memory:** 40.8 MB  
+**Submitted:** 2026-10-25T15:12:09.935Z  
 
 ```java
 class Solution {
     public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
         int states = minutesToTest / minutesToDie + 1;
-
-        int pigs = 0;
-        int capacity = 1;
-
-        while (capacity < buckets) {
-            capacity *= states;
-            pigs++;
-        }
-
-        return pigs;
+        return (int)Math.floor(
+                Math.log(buckets) / Math.log(states)
+        );
     }
 }
 ```
