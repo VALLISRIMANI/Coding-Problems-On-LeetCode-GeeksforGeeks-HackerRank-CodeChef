@@ -4,35 +4,16 @@
 
 ## Problem
 
-### Formatting a Poem
-
-A developer wants to print a poem with each line on a new row.
-
-```
-class Codechef {
-    public static void main(String[] args) {
-       System.out.println("Roses are red _____ Violets are blue");
-    }
-}
-
-```
-
- **Expected Output** 
-
-```
-Roses are red 
-Violets are blue
-
-```
+_Description not available._
 
 ## Solution
 
-**Language:** C++  
+**Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-25T15:31:26.682Z  
+**Submitted:** 2026-10-25T15:31:18.709Z  
 
-```cpp
+```java
 class Codechef {
     public static void main(String[] args) {
         // Prints the famous movie quote using escape sequences
