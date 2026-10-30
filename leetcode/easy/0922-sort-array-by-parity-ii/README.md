@@ -1,0 +1,80 @@
+# Sort Array By Parity II
+
+![Difficulty](https://img.shields.io/badge/Difficulty-Easy-green)
+
+## Problem
+
+Given an array of integers `nums`, half of the integers in `nums` are  **odd**, and the other half are  **even**.
+
+Sort the array so that whenever `nums[i]` is odd, `i` is  **odd**, and whenever `nums[i]` is even, `i` is  **even**.
+
+Return  *any answer array that satisfies this condition*.
+
+ 
+
+ **Example 1:** 
+
+```
+Input: nums = [4,2,5,7]
+Output: [4,5,2,7]
+Explanation: [4,7,2,5], [2,5,4,7], [2,7,4,5] would also have been accepted.
+
+```
+
+ **Example 2:** 
+
+```
+Input: nums = [2,3]
+Output: [2,3]
+
+```
+
+ 
+
+ **Constraints:** 
+
+- 2 <= nums.length <= 2 * 104
+- nums.length is even.
+- Half of the integers in nums are even.
+- 0 <= nums[i] <= 1000
+
+ 
+
+ **Follow Up:**  Could you solve it in-place?
+
+## Solution
+
+**Language:** Java  
+**Runtime:** 3 ms (beats 65.51%)  
+**Memory:** 47.9 MB (beats 91.88%)  
+**Submitted:** 2026-10-30T15:43:53.124Z  
+
+```java
+class Solution {
+    public int[] sortArrayByParityII(int[] nums) {
+        int even = 0;
+        int odd = 1;
+        int n = nums.length;
+
+        while (even < n && odd < n) {
+            if (nums[even] % 2 == 0) {
+                even += 2;
+            } else if (nums[odd] % 2 != 0) {
+                odd += 2;
+            } else {
+                int temp = nums[even];
+                nums[even] = nums[odd];
+                nums[odd] = temp;
+                even += 2;
+                odd += 2;
+            }
+        }
+
+        return nums;
+    }
+}
+```
+
+---
+
+[View on LeetCode](https://leetcode.com/problems/sort-array-by-parity-ii/)
