@@ -4,47 +4,34 @@
 
 ## Problem
 
-### Bool Datatype
+### Cost of painting
 
 Listen
 
-In programming, you often need to make decisions based on whether something is True or False. For this, we have a data type representing just one of these two values - True and False.
-
-The datatype is called  **boolean datatype**.
-
-You can create a boolean variable like this:
-
-```
-studying = True
-print(studying)
-
-# Output:
-# True
-
-```
-
-- Note how we do not have to provide quotes around the value True or False.
-- Also, the T in True has to be a uppercase. Similarly, the F in False has to be uppercase.
-### Task
-
 Write a program which does the following
 
-- Declare two variables x and y
-- Assign the value True to x and the value False to y
-- Output x and y space separated on a single line
+- Find the area of a square of side 14cm.
+- Also, find the cost of painting the square if the paint costs is 7$ per $cm^2$.
+- Initialize the following variables in your program and use them in the computation s to store the length of side the square area to store the area of the square cost to store the cost of painting
+- Output area and cost to the console on separate lines.
 
 ## Solution
 
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-06T15:41:26.067Z  
+**Submitted:** 2026-11-07T16:43:42.338Z  
 
 ```py
-# Update the code below
-x = True
-y = False
-print(x, y)
+# Solution as follows
+
+s = 14
+
+area = s * s
+cost = area * 7
+
+print(area)
+print(cost)
 ```
 
 ---
