@@ -21,14 +21,14 @@ My favorite color is Blue.My favorite hobby is Reading.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-10T16:15:58.624Z  
+**Submitted:** 2026-11-08T15:28:55.201Z  
 
 ```java
 class Codechef {
     public static void main(String[] args) {
         // write your code here
         System.out.println("My name is John.");
-        System.out.println("My favorite color is Blue.My favorite hobby is Reading.");
+        System.out.println("My favorite color is Blue.My favorite hobby is Reading.   ");
     }
 }
 
