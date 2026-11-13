@@ -36,12 +36,13 @@ Output: "-10"
 
 **Language:** Java  
 **Runtime:** 1 ms (beats 80.07%)  
-**Memory:** 42.5 MB (beats 65.74%)  
-**Submitted:** 2026-11-13T16:06:09.520Z  
+**Memory:** 42 MB (beats 93.50%)  
+**Submitted:** 2026-11-13T16:07:19.236Z  
 
 ```java
 class Solution {
     public String convertToBase7(int num) {
+        /* 
         if (num == 0) {
             return "0";
         }
@@ -61,6 +62,9 @@ class Solution {
         }
 
         return sb.reverse().toString();
+        */
+        
+        return Integer.toString(num, 7);
     }
 }
 ```
