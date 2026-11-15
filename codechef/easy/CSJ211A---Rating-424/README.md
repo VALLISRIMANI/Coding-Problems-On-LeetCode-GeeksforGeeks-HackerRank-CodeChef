@@ -52,7 +52,7 @@ PASS
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-15T15:20:10.165Z  
+**Submitted:** 2026-11-15T15:20:56.910Z  
 
 ```java
 // The code below is incorrect. Debug this code to solve this problem
@@ -74,7 +74,7 @@ class Codechef
     		int total_score = a+b+c;
     		int minimum_score = Math.min(a, Math.min(b, c));
     		
-    		if(total_score>100 && minimum_score>10){
+    		if(total_score>=100 && minimum_score>=10){
     		    System.out.println("PASS");
     		}
     		else{
