@@ -17,7 +17,7 @@ class Codechef
     		int total_score = a+b+c;
     		int minimum_score = Math.min(a, Math.min(b, c));
     		
-    		if(total_score>100 && minimum_score>10){
+    		if(total_score>=100 && minimum_score>=10){
     		    System.out.println("PASS");
     		}
     		else{
