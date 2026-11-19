@@ -7,12 +7,17 @@ class Solution {
         for (char ch : num.toCharArray()) {
             int digit = ch - '0';
 
-            if (!st.isEmpty() && k > 0 && digit < st.peek()) {
+            while (!st.isEmpty() && k > 0 && digit < st.peek()) {
                 st.pop();
                 k--;
             }
 
             st.push(digit);
+        }
+
+        while (!st.isEmpty() && k > 0) {
+            st.pop();
+            k--;
         }
 
         if (st.isEmpty()) return "0";
