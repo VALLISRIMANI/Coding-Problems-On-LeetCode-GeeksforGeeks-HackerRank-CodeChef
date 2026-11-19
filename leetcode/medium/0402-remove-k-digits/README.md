@@ -48,9 +48,9 @@ Explanation: Remove all the digits from the number and it is left with nothing w
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42 MB  
-**Submitted:** 2026-11-19T13:01:18.629Z  
+**Runtime:** 19 ms (beats 58.60%)  
+**Memory:** 47.5 MB (beats 33.83%)  
+**Submitted:** 2026-11-19T13:03:15.265Z  
 
 ```java
 class Solution {
@@ -62,12 +62,17 @@ class Solution {
         for (char ch : num.toCharArray()) {
             int digit = ch - '0';
 
-            if (!st.isEmpty() && k > 0 && digit < st.peek()) {
+            while (!st.isEmpty() && k > 0 && digit < st.peek()) {
                 st.pop();
                 k--;
             }
 
             st.push(digit);
+        }
+
+        while (!st.isEmpty() && k > 0) {
+            st.pop();
+            k--;
         }
 
         if (st.isEmpty()) return "0";
