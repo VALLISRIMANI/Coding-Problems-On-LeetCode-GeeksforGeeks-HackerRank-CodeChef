@@ -1,18 +1,14 @@
 class Codechef {
     public static void main(String[] args) {
-        // Static Initialization: Expenses in specific categories
-        double[] expenses = {2000.50, 1500.75, 800.25, 1200.00, 500.00}; // Rent, groceries, utilities, travel, others
+        // Define a string with comma-separated values
+        String data = "Red,Green,Blue";
 
-        System.out.println("Rent Expense: " + expenses[0]);
-        System.out.println("Grocery Expense: " + expenses[1]);
+        // Use the split() method to divide the string into an array, using "," as the delimiter
+        String[] colors = data.split(","); // Splits string into array
 
-        // Dynamic Initialization: Add expenses later
-        double[] newExpenses = new double[3];
-        newExpenses[0] = 100.00; // Internet bill
-        newExpenses[1] = 150.00; // Gym membership
-        newExpenses[2] = 75.50;  // Subscriptions
-
-        System.out.println("Internet Bill: " + newExpenses[0]);
-        System.out.println("Gym Membership: " + newExpenses[1]);
+        // Access and print each element of the array manually without using loops
+        System.out.println("First color: " + colors[0]); // Prints the first color
+        System.out.println("Second color: " + colors[1]); // Prints the second color
+        System.out.println("Third color: " + colors[2]); // Prints the third color
     }
 }
