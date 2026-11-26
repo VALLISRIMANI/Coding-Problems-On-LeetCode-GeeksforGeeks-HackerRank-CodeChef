@@ -13,7 +13,7 @@ Which of the following expressions evaluates to `False`?
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T15:53:47.074Z  
+**Submitted:** 2026-11-25T15:53:40.866Z  
 
 ```cpp
 height = 15
