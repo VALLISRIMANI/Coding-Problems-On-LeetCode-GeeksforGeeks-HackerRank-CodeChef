@@ -18,7 +18,7 @@ not(a < b)
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T15:53:10.936Z  
+**Submitted:** 2026-11-25T15:53:18.532Z  
 
 ```cpp
 height = 15
