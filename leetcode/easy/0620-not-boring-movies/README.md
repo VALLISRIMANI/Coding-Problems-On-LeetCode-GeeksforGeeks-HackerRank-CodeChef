@@ -60,16 +60,16 @@ We have three movies with odd-numbered IDs: 1, 3, and 5. The movie with ID = 3 i
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 290 ms (beats 48.30%)  
+**Runtime:** 267 ms (beats 79.61%)  
 **Memory:** 0B (beats 100.00%)  
-**Submitted:** 2026-10-04T06:38:20.076Z  
+**Submitted:** 2026-11-27T14:16:17.044Z  
 
 ```sql
 # Write your MySQL query statement below
-SELECT *
-FROM Cinema
-WHERE id % 2 != 0 AND description != "boring"
-ORDER BY rating DESC;
+select * 
+from cinema 
+where description != "boring" and id % 2 != 0 
+order by rating desc;
 ```
 
 ---
