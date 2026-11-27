@@ -59,16 +59,19 @@ Output:
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 340 ms (beats 89.49%)  
-**Memory:** 0B (beats 100.00%)  
-**Submitted:** 2026-10-02T13:54:20.962Z  
+**Runtime:** 92 ms  
+**Memory:** 0B  
+**Submitted:** 2026-11-27T13:58:57.636Z  
 
 ```sql
 # Write your MySQL query statement below
-SELECT name FROM Employee WHERE id IN (
-    SELECT managerId FROM Employee 
-    GROUP BY managerId 
-    HAVING COUNT(managerId) >= 5
+select name 
+from employee 
+where id in (
+    select managerId 
+    from employee 
+    group by managerId 
+    having count(managerId) >= 5
 );
 ```
 
